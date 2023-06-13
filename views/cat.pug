@@ -1,0 +1,16 @@
+include header
+
+div(class='wraper')
+    div(class='content')
+        header(class='site-header')
+            include siteHeader.pug
+        div(class='container')
+            div(class='row')
+                div(class='col col-md-12')
+                    h2 #{cat[0]['category']} 
+                    div(class='row')
+                        each val, index in goods
+                            include item.pug
+                    p #{cat[0]['description']}
+        include nav
+    include footer

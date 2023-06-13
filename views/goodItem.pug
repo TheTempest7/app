@@ -1,0 +1,20 @@
+include header
+
+div(class='wraper')
+    div(class='content')
+        header(class='site-header')
+            include siteHeader.pug
+        div(class="col col-md-6 card-father")
+            div(class="card goodsPage")
+                h3(class="card-title goodsPage__title") #{goods[0]['name']}
+                div(class='image_body')
+                    img(class='card_image goodsPage__image' src='images/'+goods[0]['image'], alt="device")
+                ul(class="card-actions goodsPage__info")
+                    li
+                        p #{goods[0]['description']}
+                    li
+                        p #{goods[0]['cost']}
+                    li
+                        button(class="button-primary button add-to-cart" data-goods_id=goods[0]['id']) add to Cart
+        include nav
+    include footer
